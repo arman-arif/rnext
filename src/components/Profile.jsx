@@ -1,5 +1,8 @@
-function Profile() {
-  return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />;
+function Profile({children, name}) {
+    return <div>
+        <h1>{name}</h1>
+        {children}
+    </div>;
 }
 
 export default Profile;

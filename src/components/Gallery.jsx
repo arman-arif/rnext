@@ -1,12 +1,24 @@
 import Profile from "./Profile";
+import Avatar from "./Avatar";
 
 export default function Gallery() {
-  return (
-    <section>
-      <h1>Amazing scientist</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-    </section>
-  );
+    const items = [
+        {id: 10, name: "Albert Einstein"},
+        {id: 20, name: "Isaac Newton"},
+        {id: 100, name: "Marie Curie"},
+    ];
+
+    return (
+        <section>
+            <h1>Amazing scientists</h1>
+            {items.map((props, index) => (
+                <Profile key={index} name={props.name}>
+                    <Avatar
+                        {...props}
+                        size={80}
+                    />
+                </Profile>
+            ))}
+        </section>
+    );
 }
